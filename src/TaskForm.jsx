@@ -1,4 +1,6 @@
 import { useState } from "react"
+import TaskList from "./TaskList"
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function TaskForm() {
@@ -7,6 +9,17 @@ export default function TaskForm() {
   const [formData, setFormData] = useState(emptyForm)
   const [tasks, setTasks] = useState([])
 
+
+  function editTask(uuid) {
+    console.log(uuid)
+    const task = tasks.find(item => item.uuid === uuid)
+    setFormData(task)
+  }
+
+  function removeTask(uuid) {
+    console.log(uuid)
+    setTasks(prev => prev.filter(item => item.uuid !== uuid))
+  }
 
   function handleInputChange(event) {
     setFormData(prev => {
@@ -21,6 +34,7 @@ export default function TaskForm() {
     event.preventDefault()
     console.log(formData)
     if (formData.task.length > 3) {
+      formData.uuid = uuidv4()
       setTasks(
         prev => [formData, ...prev]
       )
@@ -32,9 +46,6 @@ export default function TaskForm() {
 
   return (
     <>
-      <ul>
-        {tasks.map((item, index) => <li key={index}>{item.task}</li>)}
-      </ul>
       <form onSubmit={handleFormSubmit}>
         <div className="row mb-3">
           <label htmlFor="task" className="col-sm-2 col-form-label">Task</label>
@@ -43,6 +54,7 @@ export default function TaskForm() {
               className="form-control"
               id="task"
               name="task"
+              value={formData.task}
               onChange={handleInputChange}
             />
           </div>
@@ -56,6 +68,7 @@ export default function TaskForm() {
                 type="checkbox"
                 id="priority"
                 name="priority"
+                checked={formData.priority}
                 onChange={handleInputChange}
               />
               <label className="form-check-label" htmlFor="priority">
@@ -66,6 +79,7 @@ export default function TaskForm() {
         </div>
         <button type="submit" className="btn btn-primary">Sign in</button>
       </form>
+      <TaskList tasks={tasks} removeTask={removeTask} editTask={editTask} ></TaskList>
     </>
   )
 }
