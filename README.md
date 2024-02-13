@@ -1,8 +1,19 @@
-# React + Vite
+# React - Work With Form || Task List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React ile ilgili konuları geliştirmek için bir Form ile bir Task List projesi yaptım.
 
-Currently, two official plugins are available:
+Proje tasarımında Bootstrap kullandım. Form Submit işleminin denetimi için preventDefault ekledim. Form içindeki bilgileri UUID ile ekledim. Tasklara useEffect ile filtreleme yaptım. Birden fazla Component kullandım. Tasklarımı localStorage içinde tuttum.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu süreçte kendimi geliştirmeye devam edeceğim. 
+
+--------------------------------------------------------------------------------
+
+I made a Task List project with a Form to talk about React related topics.
+
+In Bootstrap project design. I added PreventDefault for the Form Submit control. I added In-Form information with UUID. I did the tasks with the useEffect file. Contains multiple Components. I kept my tasks in localStorage.
+
+We continue to use it in this process.
+
+CANLI DEMO: https://react-work-with-form.vercel.app/
+
+# Preview
