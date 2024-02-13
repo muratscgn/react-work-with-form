@@ -17,3 +17,5 @@ We continue to use it in this process.
 CANLI DEMO: https://react-work-with-form.vercel.app/
 
 # Preview
+
+https://github.com/muratscgn/react-work-with-form/assets/124501558/fe2ca30c-6870-4d80-9269-52912cd99ded
